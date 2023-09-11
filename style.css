@@ -13,12 +13,17 @@ body{
 }
 .calculator{
   width: 369px;
-  height: 500px;
+  height: 550px;
   background-color: gray;
   display:flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  border-radius: 30px;
+}
+.top{
+  width: 100%;
+  height:30px;
 }
 #screenspace{
   width: 100%;
@@ -69,8 +74,10 @@ body{
   display:flex;
   align-items: center;
   margin-top: 50px;
+  font-family: 'Seven Segment', sans-serif;
 }
 .creator img{
   width: 50px;
   margin-left: 20px;
+  border-radius: 20px
 }
