@@ -122,6 +122,7 @@ let animTrigger1 = "1337";
 let animTrigger2 = "69";
 let animTrigger3 = "420";
 let animTrigger4 = "5318008";
+let animTrigger5 = "58008";
 
 function buttonPressed() {
   let result = screenEl.textContent.trim();
@@ -186,6 +187,22 @@ function buttonPressed() {
     }
   }
   if (result == animTrigger4) {
+    let id = null;
+    const elem = document.getElementById("screenspace");
+    let deg = 0;
+    clearInterval(id);
+    id = setInterval(frame, 1);
+    function frame() {
+      if (deg == 180) {
+        clearInterval(id);
+        rotated = true;
+      } else {
+        deg++;
+        elem.style.transform = "rotate(" + deg + "deg" + ")";
+      }
+    }
+  }
+  if (result == animTrigger5) {
     let id = null;
     const elem = document.getElementById("screenspace");
     let deg = 0;
