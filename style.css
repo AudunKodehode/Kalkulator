@@ -1,31 +1,31 @@
-@import url('https://fonts.cdnfonts.com/css/seven-segment');
+@import url("https://fonts.cdnfonts.com/css/seven-segment");
 * {
   box-sizing: border-box;
   margin: 0;
 }
-body{
+body {
   height: 100vh;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: black;
 }
-.calculator{
+.calculator {
   width: 369px;
   height: 550px;
   background-color: gray;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   border-radius: 30px;
 }
-.top{
+.top {
   width: 100%;
-  height:30px;
+  height: 30px;
 }
-#screenspace{
+#screenspace {
   width: 100%;
   height: 90%;
   background-color: rgb(3, 162, 3);
@@ -33,26 +33,25 @@ body{
   color: white;
   font-size: 70px;
   text-align: center;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-family: 'Seven Segment', sans-serif;
-  color:rgb(36, 36, 36)
+  font-family: "Seven Segment", sans-serif;
+  color: rgb(36, 36, 36);
 }
-.screencontainer{
+.screencontainer {
   width: 100%;
   height: 100px;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(21, 21, 21);
-  color:rgb(36, 36, 36)
-
+  color: rgb(36, 36, 36);
 }
-.numbuttons{
-  width:90%;
+.numbuttons {
+  width: 90%;
 }
-.numbutton{
+.numbutton {
   width: 80px;
   height: 80px;
   background-color: rgb(202, 202, 202);
@@ -60,7 +59,7 @@ body{
   text-align: center;
   border-radius: 20px;
 }
-.clear{
+.clear {
   width: 332px;
   height: 80px;
   background-color: rgb(202, 202, 202);
@@ -68,16 +67,65 @@ body{
   text-align: center;
   border-radius: 20px;
 }
-.creator{
+.creator {
   font-size: 30px;
-  color:white;
-  display:flex;
+  color: white;
+  display: flex;
   align-items: center;
   margin-top: 50px;
-  font-family: 'Seven Segment', sans-serif;
+  font-family: "Seven Segment", sans-serif;
 }
-.creator img{
+.creator img {
   width: 50px;
   margin-left: 20px;
-  border-radius: 20px
+  border-radius: 20px;
+}
+
+.anim1 {
+  width: 400px;
+  height: 160px;
+  position: absolute;
+  font-size: 150px;
+  text-align: center;
+  font-family: monospace;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgb(47, 0, 255);
+  color: rgb(8, 192, 39);
+
+  opacity: 0;
+}
+.anim2 {
+  width: 400px;
+  height: 160px;
+  position: absolute;
+  font-size: 150px;
+  text-align: center;
+  font-family: monospace;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgb(255, 0, 212);
+  color: white;
+
+  opacity: 0;
+}
+.anim3 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  z-index: 18;
+  opacity: 0;
+}
+.anim3 img {
+  width: 100%;
+  border-radius: 50px;
+}
+.version{
+  color:white;
 }
