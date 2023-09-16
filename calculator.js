@@ -111,9 +111,7 @@ function but0() {
   buttonPressed();
 }
 function butdiv() {
-  if (math != "div"){
     num1 = parseFloat(screenEl.textContent);
-  }
   math = "div";
   screenEl.textContent = "";
   buttonPressed();
@@ -123,17 +121,13 @@ function butcomma() {
   buttonPressed();
 }
 function butmul() {
-  if (math != "mul"){
     num1 = parseFloat(screenEl.textContent);
-  }
   screenEl.textContent = "";
   math = "mul";
   buttonPressed();
 }
 function butadd() {
-if (math != "add"){
   num1 = parseFloat(screenEl.textContent);
-}
   screenEl.textContent = "";
   math = "add";
   buttonPressed();
