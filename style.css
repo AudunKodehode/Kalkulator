@@ -24,6 +24,61 @@ body {
 .numbuttons {
   width: 332px;
 }
+button.numbutton:hover {
+  background-color: rgb(122, 122, 122);
+}
+button.clear:hover {
+  background-color: rgb(122, 122, 122);
+}
+button.numbutton:active {
+  background-color: rgb(93, 93, 93);
+}
+button.clear:active {
+  background-color: rgb(93, 93, 93);
+}
+div.top {
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  padding-left: 250px;
+}
+.history {
+  width: 70px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: gray;
+}
+.calchistory {
+  display: flex;
+}
+#history {
+  opacity: 0;
+  width: 300px;
+  height: 420px;
+  background-color: gray;
+  border-radius: 20px;
+}
+div.spacer {
+  width: 300px;
+}
+div.historycontainer {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+#history h1 {
+  padding: 10px;
+  font-family: "Seven Segment", sans-serif;
+}
+#history p {
+  font-size: 30px;
+  padding: 15px;
+  font-family: "Seven Segment", sans-serif;
+  font-weight: 800;
+}
+#history #time {
+  font-size: 25px;
+}
 .top {
   width: 100%;
   height: 30px;
@@ -40,6 +95,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Seven Segment", sans-serif;
+  font-weight: 800;
   color: rgb(36, 36, 36);
 }
 .screencontainer {
@@ -59,6 +115,8 @@ body {
   font-size: 30px;
   text-align: center;
   border-radius: 20px;
+  font-family: "Seven Segment", sans-serif;
+  font-weight: 800;
 }
 .clear {
   width: 332px;
@@ -127,6 +185,7 @@ body {
   width: 100%;
   border-radius: 50px;
 }
-.version{
-  color:white;
+.version {
+  color: white;
+  font-family: "Seven Segment", sans-serif;
 }

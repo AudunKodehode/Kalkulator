@@ -1,49 +1,55 @@
-const keyFunctions = {
-  0: but0,
-  1: but1,
-  2: but2,
-  3: but3,
-  4: but4,
-  5: but5,
-  6: but6,
-  7: but7,
-  8: but8,
-  9: but9,
-};
+document.getElementById("screenspace").textContent = "";
 document.addEventListener("keydown", function (event) {
   const key = event.key;
-  if (key in keyFunctions) {
-    keyFunctions[key](); // Call the corresponding function
-  } else if (key === "Backspace") {
+  if (key === '1'){
+    but1();
+  } else if (key === '2'){
+    but2();
+  }else if (key === '3'){
+    but3();
+  }else if (key === '4'){
+    but4();
+  }else if (key === '5'){
+    but5();
+  }else if (key === '6'){
+    but6();
+  }else if (key === '7'){
+    but7();
+  }else if (key === '8'){
+    but8();
+  }else if (key === '9'){
+    but9();
+  }else if (key === '0'){
+    but0();
+  }else if (key === "/") {
+    butdiv();
+  } else if (key === "Enter") {
+    event.preventDefault();
+    butequals();
+  } else if (key === "*") {
+    butmul();
+  } else if (key === "+") {
+    butadd();
+  } else if (key === "-") {
+    butsub();
+  } else if (key === ",") {
+      butcomma();
+  } else if (key === "Delete") {
+    butclear();
+  }
+  else if (key === "Backspace") {
     if (screenEl.textContent.length > 0) {
       screenEl.textContent = screenEl.textContent.substring(
         0,
         screenEl.textContent.length - 1
       );
     }
-  } else if (key === "/") {
-    butdiv();
-    console.log("div");
-  } else if (key === "Enter") {
-    event.preventDefault();
-    butequals();
-    console.log("equals");
-  } else if (key === "*") {
-    butmul();
-    console.log("mul");
-  } else if (key === "+") {
-    butadd();
-    console.log("add");
-  } else if (key === "-") {
-    butsub();
-    console.log("subtract");
-  } else if (key === "Delete") {
-    butclear();
-    console.log("clear");
-  } else {
   }
+  else {}
 });
 
+
+let showHistory = false;
 let screenEl = document.getElementById("screenspace");
 let num1, num2, sum;
 let math = "none";
@@ -53,6 +59,15 @@ let animTrigger2 = "69";
 let animTrigger3 = "420";
 let animTrigger4 = "5318008";
 let animTrigger5 = "58008";
+function history(){
+  let history = document.getElementById("history");
+  showHistory = !showHistory;
+  if (showHistory == true){ 
+    history.style.opacity = "1";
+  } else {
+    history.style.opacity = "0";
+  }
+}
 function but1() {
   screenEl.textContent += 1;
   buttonPressed();
@@ -96,7 +111,9 @@ function but0() {
   buttonPressed();
 }
 function butdiv() {
-  num1 = screenEl.textContent;
+  if (math != "div"){
+    num1 = parseFloat(screenEl.textContent);
+  }
   math = "div";
   screenEl.textContent = "";
   buttonPressed();
@@ -106,44 +123,53 @@ function butcomma() {
   buttonPressed();
 }
 function butmul() {
-  num1 = parseFloat(screenEl.textContent);
+  if (math != "mul"){
+    num1 = parseFloat(screenEl.textContent);
+  }
   screenEl.textContent = "";
   math = "mul";
   buttonPressed();
 }
 function butadd() {
+if (math != "add"){
   num1 = parseFloat(screenEl.textContent);
+}
   screenEl.textContent = "";
   math = "add";
   buttonPressed();
 }
 function butcomma() {
   let checkString = screenEl.textContent;
-  console.log(checkString);
   if (checkString.includes(".") == false) {
     screenEl.textContent += ".";
   }
   buttonPressed();
 }
 function butequals() {
+hourminutesecondnow = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+  let historyDiv = document.getElementById("historytext");
   if (math == "none") {
   } else if (math == "add") {
     num2 = screenEl.textContent;
     sum = parseFloat(num1) + parseFloat(num2);
     screenEl.textContent = "";
     screenEl.textContent = sum;
+    addHistory(`${num1} + ${num2} = ${sum}`)
   } else if (math == "sub") {
     num2 = screenEl.textContent;
     sum = parseFloat(num1) - parseFloat(num2);
     screenEl.textContent = sum;
+    addHistory(`${num1} - ${num2} = ${sum}`)
   } else if (math == "div") {
     num2 = screenEl.textContent;
     sum = parseFloat(num1) / parseFloat(num2);
+    addHistory(`${num1} / ${num2} = ${sum}`)
     screenEl.textContent = sum;
   } else if (math == "mul") {
     num2 = screenEl.textContent;
     sum = parseFloat(num1) * parseFloat(num2);
     screenEl.textContent = sum;
+    addHistory(`${num1} * ${num2} = ${sum}`)
   }
   buttonPressed();
 }
@@ -261,4 +287,37 @@ function buttonPressed() {
       }
     }
   }
+  let length = screenEl.textContent.length;
+  elem = document.getElementById("screenspace");
+  elem.style.color = "black";
+  if (length > 0 && length < 11) {
+    elem.style.fontSize = "70px";
+  }else if (length > 10 && length < 17) {
+    elem.style.fontSize = "40px";
+  }
+  else if (length > 15 && length < 23) {
+    elem.style.fontSize = "30px";
+  }  else if (length > 23 && length < 35) {
+    elem.style.fontSize = "20px";
+  }  else if (length > 35) {
+    elem.style.fontSize = "30px";
+    elem.style.color = "red";
+  }
+
+}
+let historyArray = [];
+function addHistory(historyToAdd){
+  console.log(historyToAdd)
+  let historyDiv = document.getElementById("historytext");
+  let line = `<p>${historyToAdd}  <span id="time">   @${hourminutesecondnow}</p>`
+if (historyArray.length < 6){
+  historyArray.push(line);
+}else {
+  historyArray.shift();
+  historyArray.push(line);
+}
+historyDiv.innerHTML = "";
+for (let i = 0; i < historyArray.length; i++) {
+  historyDiv.innerHTML += historyArray[i]
+}
 }

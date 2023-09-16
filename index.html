@@ -9,8 +9,12 @@
     <title>Kalkulator</title>
   </head>
   <body>
+    <div class="calchistory">
+      <div class="spacer"></div>
     <div class="calculator">
-      <div class="top"></div>
+      <div class="top">
+        <button onclick="history()" class="history">History</button>
+      </div>
       <div class="screencontainer">
         <div id="screenspace">
         </div>
@@ -36,18 +40,27 @@
 <script src="calculator.js"></script>
 </div>
     </div>
+<div class="historycontainer">
+    <div id="history">
+      <h1>History</h1>
+      <hr>
+      <span id="historytext"></span>
+    </div>
+  </div>
+  </div>
 <div class="creator">
    <a href="https://github.com/AudunKodehode">  AudunKodehode   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL9gl97W9JFxRVyxbcVqznAGdyXFPK9A0pnQ&usqp=CAU" alt=""></a>
   </div>
   
 <div class="version">
-  <p>Version 2.1 - Added numpad support</p>
+  <p>Version 2.2 - Added historypanel</p>
 </div>
 <div class="animations">
   <div id="anim1" class="anim1">LEET!</div> <!---1337-->
   <div id="anim2" class="anim2">Nice!</div> <!---69-->
   <div id="anim3" class="anim3"><img src="https://cdn.drawception.com/images/panels/2015/3-16/tL5q6W5WOE-2.png" alt=""></div> <!---420-->
 </div>
+
   </body>
 
 </html>
