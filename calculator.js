@@ -1,6 +1,58 @@
+const keyFunctions = {
+  0: but0,
+  1: but1,
+  2: but2,
+  3: but3,
+  4: but4,
+  5: but5,
+  6: but6,
+  7: but7,
+  8: but8,
+  9: but9,
+};
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+  if (key in keyFunctions) {
+    keyFunctions[key](); // Call the corresponding function
+  } else if (key === "Backspace") {
+    if (screenEl.textContent.length > 0) {
+      screenEl.textContent = screenEl.textContent.substring(
+        0,
+        screenEl.textContent.length - 1
+      );
+    }
+  } else if (key === "/") {
+    butdiv();
+    console.log("div");
+  } else if (key === "Enter") {
+    event.preventDefault();
+    butequals();
+    console.log("equals");
+  } else if (key === "*") {
+    butmul();
+    console.log("mul");
+  } else if (key === "+") {
+    butadd();
+    console.log("add");
+  } else if (key === "-") {
+    butsub();
+    console.log("subtract");
+  } else if (key === "Delete") {
+    butclear();
+    console.log("clear");
+  } else {
+  }
+});
+
 let screenEl = document.getElementById("screenspace");
 let num1, num2, sum;
 let math = "none";
+let rotated = false;
+let animTrigger1 = "1337";
+let animTrigger2 = "69";
+let animTrigger3 = "420";
+let animTrigger4 = "5318008";
+let animTrigger5 = "58008";
 function but1() {
   screenEl.textContent += 1;
   buttonPressed();
@@ -93,7 +145,6 @@ function butequals() {
     sum = parseFloat(num1) * parseFloat(num2);
     screenEl.textContent = sum;
   }
-
   buttonPressed();
 }
 function butsub() {
@@ -102,7 +153,6 @@ function butsub() {
   screenEl.textContent = "";
   buttonPressed();
 }
-let rotated = false;
 function butclear() {
   num1 = 0;
   num2 = 0;
@@ -117,13 +167,6 @@ function butclear() {
     screenEl.textContent = "5318008";
   }
 }
-
-let animTrigger1 = "1337";
-let animTrigger2 = "69";
-let animTrigger3 = "420";
-let animTrigger4 = "5318008";
-let animTrigger5 = "58008";
-
 function buttonPressed() {
   let result = screenEl.textContent.trim();
   if (result == animTrigger1) {

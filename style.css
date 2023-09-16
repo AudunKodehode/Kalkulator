@@ -12,14 +12,17 @@ body {
   background-color: black;
 }
 .calculator {
-  width: 369px;
-  height: 550px;
+  width: 350px;
+  height: 540px;
   background-color: gray;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   border-radius: 30px;
+}
+.numbuttons {
+  width: 332px;
 }
 .top {
   width: 100%;
@@ -48,9 +51,7 @@ body {
   background-color: rgb(21, 21, 21);
   color: rgb(36, 36, 36);
 }
-.numbuttons {
-  width: 90%;
-}
+
 .numbutton {
   width: 80px;
   height: 80px;
