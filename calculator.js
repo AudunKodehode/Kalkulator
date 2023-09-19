@@ -200,11 +200,14 @@ function buttonPressed() {
     elem.style.opacity = "1";
     elem.style.left = "800px";
     elem.style.top = "300px";
+    elem.style.visibility = "visible";
+    
     function frame() {
       if (deg == 360) {
         clearInterval(id);
         elem.style.opacity = "0";
         elem.style.left = "1800px";
+        elem.style.visibility = "hidden";
       } else {
         deg++;
         elem.style.transform = "rotate(" + deg + "deg" + ")";
@@ -220,11 +223,13 @@ function buttonPressed() {
     elem.style.left = "800px";
     elem.style.top = "300px";
     elem.style.opacity = "1";
+    elem.style.visibility = "visible";
     function frame() {
       if (deg == 360) {
         clearInterval(id);
         elem.style.opacity = "0";
         elem.style.left = "1800px";
+        elem.style.visibility = "hidden";
       } else {
         deg++;
         elem.style.transform = "rotate(" + deg + "deg" + ")";
@@ -240,8 +245,10 @@ function buttonPressed() {
     elem.style.left = "800px";
     elem.style.top = "300px";
     elem.style.opacity = "1";
+    elem.style.visibility = "visible";
     function frame() {
       if (deg == 360) {
+        elem.style.visibility = "hidden";
         clearInterval(id);
         elem.style.opacity = "0";
         elem.style.left = "1800px";

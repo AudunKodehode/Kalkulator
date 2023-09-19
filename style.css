@@ -4,12 +4,16 @@
   margin: 0;
 }
 body {
+  max-height: 100vh;
   height: 100vh;
+  max-width: 100vw;
+  width:  100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: black;
+  overflow: hidden; 
 }
 .calculator {
   width: 350px;
@@ -156,6 +160,7 @@ div.historycontainer {
   color: rgb(8, 192, 39);
 
   opacity: 0;
+  visibility: hidden;
 }
 .anim2 {
   width: 400px;
@@ -173,6 +178,7 @@ div.historycontainer {
   color: white;
 
   opacity: 0;
+  visibility: hidden;
 }
 .anim3 {
   width: 300px;
@@ -180,6 +186,7 @@ div.historycontainer {
   position: absolute;
   z-index: 18;
   opacity: 0;
+  visibility: hidden;
 }
 .anim3 img {
   width: 100%;
