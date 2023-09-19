@@ -189,3 +189,34 @@ div.historycontainer {
   color: white;
   font-family: "Seven Segment", sans-serif;
 }
+
+.explosion {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url("https://i.ibb.co/bWGXgRX/explosions-png-2.png");
+  background-color: rgba(240, 248, 255, 0);
+  animation: explode 2.5s ease-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.explosion img {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    transform-origin: center;
+    opacity: 0;
+  }
+}

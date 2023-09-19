@@ -59,6 +59,7 @@ let animTrigger2 = "69";
 let animTrigger3 = "420";
 let animTrigger4 = "5318008";
 let animTrigger5 = "58008";
+let animTrigger6 = "Infinity"
 function history(){
   let history = document.getElementById("history");
   showHistory = !showHistory;
@@ -172,6 +173,7 @@ function butsub() {
   math = "sub";
   screenEl.textContent = "";
   buttonPressed();
+
 }
 function butclear() {
   num1 = 0;
@@ -281,6 +283,10 @@ function buttonPressed() {
       }
     }
   }
+  if (result == animTrigger6){
+    explopde();
+    screenEl.textContent = "Error"
+  }
   let length = screenEl.textContent.length;
   elem = document.getElementById("screenspace");
   elem.style.color = "black";
@@ -315,3 +321,18 @@ for (let i = 0; i < historyArray.length; i++) {
   historyDiv.innerHTML += historyArray[i]
 }
 }
+
+
+
+function explopde() {
+  const explosionElement = document.createElement("div");
+  explosionElement.classList.add("explosion");
+  explosionElement.innerHTML = `<img src="https://i.ibb.co/bWGXgRX/explosions-png-2.png" alt="">`;
+  document.body.appendChild(explosionElement);
+  explosionElement.addEventListener("animationend", () => {
+    explosionElement.remove();
+  });
+    const sound = new Audio('explosion.wav');
+    sound.play();
+}
+
