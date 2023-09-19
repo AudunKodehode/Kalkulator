@@ -237,6 +237,9 @@ function buttonPressed() {
     }
   }
   if (result == animTrigger3) {
+    const sound = new Audio('420.mp3');
+    sound.play();
+
     let id = null;
     const elem = document.getElementById("anim3");
     let deg = -90;
